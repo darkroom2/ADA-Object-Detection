@@ -1,0 +1,7 @@
+torch
+torchvision
+torchaudio
+jupyterlab
+torch-tb-profiler
+wandb
+clearml
