@@ -3,5 +3,5 @@ torchvision
 torchaudio
 jupyterlab
 torch-tb-profiler
-wandb
+wandb<=0.12.10
 clearml
