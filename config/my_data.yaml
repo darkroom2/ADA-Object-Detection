@@ -1,0 +1,20 @@
+# Train/val/test sets as 1) dir: path/to/imgs, 2) file: path/to/imgs.txt, or 3) list: [path/to/imgs1, path/to/imgs2, ..]
+path: ../datasets/test_db_converted  # dataset root dir
+train: images  # train images (relative to 'path')
+#val: images/val  # val images (relative to 'path')
+#test: images/test  # test images (optional)
+
+# Classes
+nc: 12  # number of classes
+names: [ 'black-bishop',
+         'black-king',
+         'black-knight',
+         'black-pawn',
+         'black-queen',
+         'black-rook',
+         'white-bishop',
+         'white-king',
+         'white-knight',
+         'white-pawn',
+         'white-queen',
+         'white-rook' ]  # class names
