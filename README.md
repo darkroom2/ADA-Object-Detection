@@ -80,8 +80,7 @@ white-rook
 
 #### Konwersja z formatu CSV na format YOLO
 
-Po uruchomieniu skryptu konwertującego `.csv` na `yolo` (komórki `In 51` oraz `In 53` w notatniku), powinniśmy uzyskać
-następujący wynik:
+Po uruchomieniu skryptu konwertującego `.csv` na `yolo`, powinniśmy uzyskać następujący wynik:
 
 ```text
 datasets
@@ -116,8 +115,51 @@ datasets
 ```
 
 Powinien zostać utworzony folder z wybraną w punkcie wyżej nazwą (np. `test_db_converted`) a w nim dwa foldery: `images`
-zawierający obrazy oraz `labels` zawi.
+zawierający obrazy oraz `labels` zawierający pliki `.txt` z bounding-boxami obiektów znajdujących się na obrazach.
 
+
+#### Podział obrazów na dane trenujące, walidujące i testowe.
+
+Przygotować ścieżki do folderów z obrazami i labelami oraz wybrać seed oraz ratio podziału:
+
+```python
+images_dir = 'datasets/test_db_converted/images'
+labels_dir = 'datasets/test_db_converted/labels'
+
+seed = 1337
+ratio = (.5, 0.25, 0.25)
+```
+
+Uruchomić skrypt w notebooku.
+
+W wyniku powinny zostać utworzone podfoldery `train`, `val`, test zarówno dla obrazów, jak i labeli:
+
+```text
+test_db_converted
+  ├── images
+  │   ├── test
+  │   │   └── 4.jpg
+  │   ├── train
+  │   │   ├── 0.jpg
+  │   │   ├── 1.jpg
+  │   │   ├── 3.jpg
+  │   │   └── 5.jpg
+  │   └── val
+  │       ├── 2.jpg
+  │       └── 6.jpg
+  └── labels
+      ├── test
+      │   └── 4.txt
+      ├── train
+      │   ├── 0.txt
+      │   ├── 1.txt
+      │   ├── 3.txt
+      │   └── 5.txt
+      └── val
+          ├── 2.txt
+          └── 6.txt
+
+```
 
 #### Przygotowanie configu
 
